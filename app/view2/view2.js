@@ -1,14 +1,18 @@
 'use strict';
 
-angular.module('myApp.view2', ['ngRoute'])
+angular.module('myApp.view2', ['ngRoute', 'myApp.services', 'myApp.directives'])
 
-.config(['$routeProvider', function($routeProvider) {
+.config(function($routeProvider) {
   $routeProvider.when('/view2', {
     templateUrl: 'view2/view2.html',
-    controller: 'View2Ctrl'
+    controller: 'View2Ctrl',
+    controllerAs: 'postVm'
   });
-}])
+})
 
-.controller('View2Ctrl', [function() {
+.controller('View2Ctrl', function(blogPost) {
+  var vm = this;
 
-}]);
+  vm.colour = '';
+  vm.currentPost = blogPost.getRandom();
+});

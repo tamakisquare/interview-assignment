@@ -1,5 +1,7 @@
-<p>This is the partial for view 2.</p>
-<p>
-  Showing of 'interpolate' filter:
-  {{ 'Current version is v%VERSION%.' | interpolate }}
-</p>
+<h2 border-colour="postVm.colour">Random Post</h2>
+<div>
+  <div><span>ID: </span>{{postVm.currentPost.id}}</div>
+  <div><span>Title: </span>{{postVm.currentPost.title}}</div>
+  <div><span>Body: </span><p>{{postVm.currentPost.title}}</p></div>
+</div>
+<label>Title colour: <input type="text" ng-model="postVm.colour" /></label>
